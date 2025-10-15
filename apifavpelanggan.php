@@ -89,12 +89,12 @@ function create() {
 // DETAIL - mengambil data favorit_pelanggan berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_favorit']) ? $_GET['id_favorit'] : '';
     $res = array();
 
     if ($id) {
         $query = mysqli_query($koneksi, "SELECT * FROM favorit_pelanggan WHERE id_favorit='$id'");
-        
+
         if (!$query) {
             $error = mysqli_error($koneksi);
             $data['data']['error'] = "Query gagal: " . $error;
@@ -121,7 +121,7 @@ function detail() {
 // UPDATE - mengupdate data favorit_pelanggan
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_favorit']) ? $_GET['id_favorit'] : '';
     $id_pelanggan = isset($_POST['id_pelanggan']) ? mysqli_real_escape_string($koneksi, $_POST['id_pelanggan']) : null;
     $id_alat = isset($_POST['id_alat']) ? mysqli_real_escape_string($koneksi, $_POST['id_alat']) : null;
     $res = "Gagal update data.";
@@ -160,7 +160,7 @@ function update() {
 // DELETE - menghapus data favorit_pelanggan
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_favorit']) ? $_GET['id_favorit'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {
