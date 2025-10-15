@@ -47,7 +47,7 @@ function normal() {
         $res[] = array(
             'id_admin' => $baris['id_admin'],
             'username' => $baris['username'],
-            'password' => $baris['password'], // Note: Jangan tampilkan password di production
+            'password' => $baris['password'],
             'nama_admin' => $baris['nama_admin'],
             'level' => $baris['level']
         );
@@ -62,7 +62,7 @@ function normal() {
 function create() {
     global $koneksi;
     $username = isset($_POST['username']) ? mysqli_real_escape_string($koneksi, $_POST['username']) : '';
-    $password = isset($_POST['password']) ? password_hash($_POST['password'], PASSWORD_DEFAULT) : ''; // Hash password
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
     $nama_admin = isset($_POST['nama_admin']) ? mysqli_real_escape_string($koneksi, $_POST['nama_admin']) : '';
     $level = isset($_POST['level']) ? mysqli_real_escape_string($koneksi, $_POST['level']) : 'Operator';
     $res = "Input data gagal.";
@@ -110,7 +110,7 @@ function detail() {
             $res[] = array(
                 'id_admin' => $baris['id_admin'],
                 'username' => $baris['username'],
-                'password' => $baris['password'], // Note: Jangan tampilkan di production
+                'password' => $baris['password'],
                 'nama_admin' => $baris['nama_admin'],
                 'level' => $baris['level']
             );
@@ -127,7 +127,7 @@ function update() {
     global $koneksi;
     $id = isset($_GET['id']) ? $_GET['id'] : '';
     $username = isset($_POST['username']) ? mysqli_real_escape_string($koneksi, $_POST['username']) : '';
-    $password = isset($_POST['password']) ? password_hash($_POST['password'], PASSWORD_DEFAULT) : null;
+    $password = isset($_POST['password']) ? $_POST['password'] : null;
     $nama_admin = isset($_POST['nama_admin']) ? mysqli_real_escape_string($koneksi, $_POST['nama_admin']) : '';
     $level = isset($_POST['level']) ? mysqli_real_escape_string($koneksi, $_POST['level']) : '';
     $res = "Gagal update data.";
