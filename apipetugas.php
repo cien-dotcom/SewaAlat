@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "sewa_alat_berat";
+$db   = "alatberat";
 
 $koneksi = mysqli_connect($host, $user, $pass, $db);
 
