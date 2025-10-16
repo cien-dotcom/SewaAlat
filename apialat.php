@@ -94,7 +94,7 @@ function create() {
 // DETAIL - mengambil data alat berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_alat']) ? $_GET['id_alat'] : '';
     $res = array();
 
     if ($id) {
@@ -131,7 +131,7 @@ function detail() {
 // UPDATE - mengupdate data alat
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_alat']) ? $_GET['id_alat'] : '';
     $nama_alat = isset($_POST['nama_alat']) ? mysqli_real_escape_string($koneksi, $_POST['nama_alat']) : '';
     $jenis = isset($_POST['jenis']) ? mysqli_real_escape_string($koneksi, $_POST['jenis']) : '';
     $kapasitas = isset($_POST['kapasitas']) ? mysqli_real_escape_string($koneksi, $_POST['kapasitas']) : '';
@@ -162,7 +162,7 @@ function update() {
 // DELETE - menghapus data alat
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_alat']) ? $_GET['id_alat'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {

@@ -87,7 +87,7 @@ function create() {
 // DETAIL - mengambil data kontrak_digital berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_kontrak']) ? $_GET['id_kontrak'] : '';
     $res = array();
 
     if ($id) {
@@ -120,7 +120,7 @@ function detail() {
 // UPDATE - mengupdate data kontrak_digital
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_kontrak']) ? $_GET['id_kontrak'] : '';
     $id_sewa = isset($_POST['id_sewa']) ? mysqli_real_escape_string($koneksi, $_POST['id_sewa']) : null;
     $file_kontrak = isset($_POST['file_kontrak']) ? mysqli_real_escape_string($koneksi, $_POST['file_kontrak']) : null;
     $tanggal_tanda_tangan = isset($_POST['tanggal_tanda_tangan']) ? mysqli_real_escape_string($koneksi, $_POST['tanggal_tanda_tangan']) : null;
@@ -157,7 +157,7 @@ function update() {
 // DELETE - menghapus data kontrak_digital
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_kontrak']) ? $_GET['id_kontrak'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {

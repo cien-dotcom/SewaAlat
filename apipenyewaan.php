@@ -91,7 +91,7 @@ function create() {
 // DETAIL - mengambil data penyewaan berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_sewa']) ? $_GET['id_sewa'] : '';
     $res = array();
 
     if ($id) {
@@ -126,7 +126,7 @@ function detail() {
 // UPDATE - mengupdate data penyewaan
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_sewa']) ? $_GET['id_sewa'] : '';
     $id_pelanggan = isset($_POST['id_pelanggan']) ? mysqli_real_escape_string($koneksi, $_POST['id_pelanggan']) : null;
     $id_alat = isset($_POST['id_alat']) ? mysqli_real_escape_string($koneksi, $_POST['id_alat']) : null;
     $tanggal_sewa = isset($_POST['tanggal_sewa']) ? mysqli_real_escape_string($koneksi, $_POST['tanggal_sewa']) : null;
@@ -167,7 +167,7 @@ function update() {
 // DELETE - menghapus data penyewaan
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_sewa']) ? $_GET['id_sewa'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {

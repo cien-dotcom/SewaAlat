@@ -92,7 +92,7 @@ function create() {
 // DETAIL - mengambil data log_aktivitas_pelanggan berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_log']) ? $_GET['id_log'] : '';
     $res = array();
 
     if ($id) {
@@ -128,7 +128,7 @@ function detail() {
 // UPDATE - mengupdate data log_aktivitas_pelanggan
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_log']) ? $_GET['id_log'] : '';
     $id_pelanggan = isset($_POST['id_pelanggan']) ? mysqli_real_escape_string($koneksi, $_POST['id_pelanggan']) : null;
     $aktivitas = isset($_POST['aktivitas']) ? mysqli_real_escape_string($koneksi, $_POST['aktivitas']) : null;
     $deskripsi = isset($_POST['deskripsi']) ? mysqli_real_escape_string($koneksi, $_POST['deskripsi']) : null;
@@ -169,7 +169,7 @@ function update() {
 // DELETE - menghapus data log_aktivitas_pelanggan
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_log']) ? $_GET['id_log'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {

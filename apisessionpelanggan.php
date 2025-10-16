@@ -92,7 +92,7 @@ function create() {
 // DETAIL - mengambil data sessions_pelanggan berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_session']) ? $_GET['id_session'] : '';
     $res = array();
 
     if ($id) {
@@ -129,7 +129,7 @@ function detail() {
 // UPDATE - mengupdate data sessions_pelanggan
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_session']) ? $_GET['id_session'] : '';
     $id_pelanggan = isset($_POST['id_pelanggan']) ? mysqli_real_escape_string($koneksi, $_POST['id_pelanggan']) : null;
     $token = isset($_POST['token']) ? mysqli_real_escape_string($koneksi, $_POST['token']) : null;
     $expires_at = isset($_POST['expires_at']) ? mysqli_real_escape_string($koneksi, $_POST['expires_at']) : null;
@@ -168,7 +168,7 @@ function update() {
 // DELETE - menghapus data sessions_pelanggan
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_session']) ? $_GET['id_session'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {

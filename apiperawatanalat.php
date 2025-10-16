@@ -89,7 +89,7 @@ function create() {
 // DETAIL - mengambil data perawatan_alat berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_perawatan']) ? $_GET['id_perawatan'] : '';
     $res = array();
 
     if ($id) {
@@ -123,7 +123,7 @@ function detail() {
 // UPDATE - mengupdate data perawatan_alat
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_perawatan']) ? $_GET['id_perawatan'] : '';
     $id_alat = isset($_POST['id_alat']) ? mysqli_real_escape_string($koneksi, $_POST['id_alat']) : null;
     $tanggal_perawatan = isset($_POST['tanggal_perawatan']) ? mysqli_real_escape_string($koneksi, $_POST['tanggal_perawatan']) : null;
     $keterangan = isset($_POST['keterangan']) ? mysqli_real_escape_string($koneksi, $_POST['keterangan']) : null;
@@ -162,7 +162,7 @@ function update() {
 // DELETE - menghapus data perawatan_alat
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_perawatan']) ? $_GET['id_perawatan'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {

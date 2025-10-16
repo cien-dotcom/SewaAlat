@@ -92,7 +92,7 @@ function create() {
 // DETAIL - mengambil data petugas berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_petugas']) ? $_GET['id_petugas'] : '';
     $res = array();
 
     if ($id) {
@@ -125,7 +125,7 @@ function detail() {
 // UPDATE - mengupdate data petugas
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_petugas']) ? $_GET['id_petugas'] : '';
     $nama_petugas = isset($_POST['nama_petugas']) ? mysqli_real_escape_string($koneksi, $_POST['nama_petugas']) : null;
     $no_telp = isset($_POST['no_telp']) ? mysqli_real_escape_string($koneksi, $_POST['no_telp']) : null;
     $role = isset($_POST['role']) ? mysqli_real_escape_string($koneksi, $_POST['role']) : null;
@@ -162,7 +162,7 @@ function update() {
 // DELETE - menghapus data petugas
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_petugas']) ? $_GET['id_petugas'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {

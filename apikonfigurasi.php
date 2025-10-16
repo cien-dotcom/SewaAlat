@@ -90,7 +90,7 @@ function create() {
 // DETAIL - mengambil data konfigurasi berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_konfigurasi']) ? $_GET['id_konfigurasi'] : '';
     $res = array();
 
     if ($id) {
@@ -122,7 +122,7 @@ function detail() {
 // UPDATE - mengupdate data konfigurasi
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_konfigurasi']) ? $_GET['id_konfigurasi'] : '';
     $nama_setting = isset($_POST['nama_setting']) ? mysqli_real_escape_string($koneksi, $_POST['nama_setting']) : null;
     $nilai_setting = isset($_POST['nilai_setting']) ? mysqli_real_escape_string($koneksi, $_POST['nilai_setting']) : null;
     $keterangan = isset($_POST['keterangan']) ? mysqli_real_escape_string($koneksi, $_POST['keterangan']) : null;
@@ -157,7 +157,7 @@ function update() {
 // DELETE - menghapus data konfigurasi
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_konfigurasi']) ? $_GET['id_konfigurasi'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {

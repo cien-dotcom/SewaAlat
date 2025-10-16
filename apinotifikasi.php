@@ -88,7 +88,7 @@ function create() {
 // DETAIL - mengambil data notifikasi berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_notifikasi']) ? $_GET['id_notifikasi'] : '';
     $res = array();
 
     if ($id) {
@@ -122,7 +122,7 @@ function detail() {
 // UPDATE - mengupdate data notifikasi
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_notifikasi']) ? $_GET['id_notifikasi'] : '';
     $id_admin = isset($_POST['id_admin']) ? mysqli_real_escape_string($koneksi, $_POST['id_admin']) : null;
     $judul = isset($_POST['judul']) ? mysqli_real_escape_string($koneksi, $_POST['judul']) : null;
     $pesan = isset($_POST['pesan']) ? mysqli_real_escape_string($koneksi, $_POST['pesan']) : null;
@@ -159,7 +159,7 @@ function update() {
 // DELETE - menghapus data notifikasi
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_notifikasi']) ? $_GET['id_notifikasi'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {

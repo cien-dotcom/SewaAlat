@@ -89,7 +89,7 @@ function create() {
 // DETAIL - mengambil data pembayaran berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_pembayaran']) ? $_GET['id_pembayaran'] : '';
     $res = array();
 
     if ($id) {
@@ -123,7 +123,7 @@ function detail() {
 // UPDATE - mengupdate data pembayaran
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_pembayaran']) ? $_GET['id_pembayaran'] : '';
     $id_sewa = isset($_POST['id_sewa']) ? mysqli_real_escape_string($koneksi, $_POST['id_sewa']) : null;
     $tanggal_bayar = isset($_POST['tanggal_bayar']) ? mysqli_real_escape_string($koneksi, $_POST['tanggal_bayar']) : null;
     $jumlah_bayar = isset($_POST['jumlah_bayar']) ? floatval($_POST['jumlah_bayar']) : null;
@@ -162,7 +162,7 @@ function update() {
 // DELETE - menghapus data pembayaran
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_pembayaran']) ? $_GET['id_pembayaran'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {

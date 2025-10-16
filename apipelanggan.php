@@ -111,7 +111,7 @@ function create() {
 // DETAIL - mengambil data pelanggan berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_pelanggan']) ? $_GET['id_pelanggan'] : '';
     $res = array();
 
     if ($id) {
@@ -145,7 +145,7 @@ function detail() {
 // UPDATE - mengupdate data pelanggan
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_pelanggan']) ? $_GET['id_pelanggan'] : '';
     $nama_pelanggan = isset($_POST['nama_pelanggan']) ? mysqli_real_escape_string($koneksi, $_POST['nama_pelanggan']) : null;
     $no_ktp = isset($_POST['no_ktp']) ? mysqli_real_escape_string($koneksi, $_POST['no_ktp']) : null;
     $alamat = isset($_POST['alamat']) ? mysqli_real_escape_string($koneksi, $_POST['alamat']) : null;
@@ -184,7 +184,7 @@ function update() {
 // DELETE - menghapus data pelanggan
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_pelanggan']) ? $_GET['id_pelanggan'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {

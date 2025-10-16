@@ -93,7 +93,7 @@ function create() {
 // DETAIL - mengambil data jadwal_sewa berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_jadwal']) ? $_GET['id_jadwal'] : '';
     $res = array();
 
     if ($id) {
@@ -129,7 +129,7 @@ function detail() {
 // UPDATE - mengupdate data jadwal_sewa
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_jadwal']) ? $_GET['id_jadwal'] : '';
     $id_sewa = isset($_POST['id_sewa']) ? mysqli_real_escape_string($koneksi, $_POST['id_sewa']) : null;
     $tanggal_mulai = isset($_POST['tanggal_mulai']) ? mysqli_real_escape_string($koneksi, $_POST['tanggal_mulai']) : null;
     $tanggal_selesai = isset($_POST['tanggal_selesai']) ? mysqli_real_escape_string($koneksi, $_POST['tanggal_selesai']) : null;
@@ -172,7 +172,7 @@ function update() {
 // DELETE - menghapus data jadwal_sewa
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_jadwal']) ? $_GET['id_jadwal'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {

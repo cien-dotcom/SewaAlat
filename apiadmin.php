@@ -92,7 +92,7 @@ function create() {
 // DETAIL - mengambil data admin berdasarkan id
 function detail() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_admin']) ? $_GET['id_admin'] : '';
     $res = array();
 
     if ($id) {
@@ -125,7 +125,7 @@ function detail() {
 // UPDATE - mengupdate data admin
 function update() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_admin']) ? $_GET['id_admin'] : '';
     $username = isset($_POST['username']) ? mysqli_real_escape_string($koneksi, $_POST['username']) : '';
     $password = isset($_POST['password']) ? $_POST['password'] : null;
     $nama_admin = isset($_POST['nama_admin']) ? mysqli_real_escape_string($koneksi, $_POST['nama_admin']) : '';
@@ -155,7 +155,7 @@ function update() {
 // DELETE - menghapus data admin
 function delete() {
     global $koneksi;
-    $id = isset($_GET['id']) ? $_GET['id'] : '';
+    $id = isset($_GET['id_admin']) ? $_GET['id_admin'] : '';
     $res = "Gagal hapus data.";
 
     if ($id) {
